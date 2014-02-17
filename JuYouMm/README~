@@ -1,0 +1,8 @@
+mjai(https://github.com/gimite/mjai)とプロトコル互換性のある
+ネットワーク対戦麻雀ゲームを作成中
+
+WebSocketとTCP Socketのローカルプロキシをサーバー側で立てて
+ブラウザ上でmjaiと対戦できるようにするプログラムを作成するのが最終目標
+
+Thanks for Mahjong Pai image.
+Empire of the Mahjong-麻雀帝國- http://www.ambitious-net.com/
