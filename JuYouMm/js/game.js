@@ -30,14 +30,14 @@ function generateCombinations(array, r, callback) {
     callback(values(indices, array));
 }
 /*
-var a=["aaa","bbb","ccc","ddd"];
-generateCombinations(a,2,function(elem){
-    for(var i=0;i<elem.length;i++){
-      console.log(elem[i]);
-    }
-    console.log("|");
-  }
-)*/
+ var a=["aaa","bbb","ccc","ddd"];
+ generateCombinations(a,2,function(elem){
+ for(var i=0;i<elem.length;i++){
+ console.log(elem[i]);
+ }
+ console.log("|");
+ }
+ )*/
 Array.prototype.shuffle = function() {
     var i = this.length;
     while(i){
@@ -62,7 +62,7 @@ Array.prototype.uniq = function(){
     return result;
 };
 ;
-var ActionEncoder, Agari, CliantController, CliantStage, DummyMJPlayerStates, HaiChecker, HaiCounter, MAX_KYOKU, MJ, MJState, Mentsu, ModelBase, MyPlayer, NPC, Plain, Player, Player1, ServerController, ServerManager, Stage, Yaku, YakuCheck, Yama, count_hai, exports, get_machi, pop_mentsu, search_heads, search_koutsu, search_syuntsu, search_tartsu, _ref, _ref1, _ref2, _ref3,
+var ActionEncoder, Agari, CliantStage, DummyMJPlayerStates, HaiChecker, HaiCounter, MAX_KYOKU, MJ, MJState, Mentsu, ModelBase, MyPlayer, NPC, Plain, Player, Player1, ServerController, ServerManager, Stage, Yaku, YakuCheck, Yama, count_hai, exports, get_machi, pop_mentsu, search_heads, search_koutsu, search_syuntsu, search_tartsu, _ref, _ref1, _ref2, _ref3,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -1490,7 +1490,6 @@ Stage = (function(_super) {
       end_game: 5
     };
     this.state = this.states.start_kyoku;
-      //cray edit this.action_que[4] = [false, false, false, false];
     this.action_que = [false, false, false, false];
     this.rest_actions = [];
     this.ActionSortIndex = {
@@ -2565,6 +2564,7 @@ ServerController = (function(_super) {
   ServerController.prototype.onconnect = function(socket) {
     var _this = this;
     console.log('connect')
+    socket.emit('mj_action',{type:'hello'})
     return socket.on("join", function(join_message) {
         var i, _i;
         console.log('join')
